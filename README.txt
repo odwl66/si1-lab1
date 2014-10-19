@@ -1,2 +1,2 @@
-Este repositório contém os códigos referente ao Lab1 da disciplina Sistemas de Informação 1.
-Aqui que vai dar o conflito! (Já resolvido agora!)
+Este repositÃ³rio contÃ©m os cÃ³digos referente ao Lab1 da disciplina Sistemas de InformaÃ§Ã£o 1.
+Aqui que vai dar o conflito! (JÃ¡ resolvido agora!)

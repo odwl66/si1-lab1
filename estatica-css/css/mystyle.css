@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+    background-color: yellowgreen;
+}
+
+h1 {
+    color: navy;
+    font-family: cursive;
+}
+
+h3 {
+    color: red;
+    font-family: sans-serif;
+}
+
+p {
+    color: dimgrey;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    border-radius: 25px;
+}
+
+button {
+    border-radius: 50px;
+}

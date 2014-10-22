@@ -8,6 +8,7 @@ function adicionarAListaParaAprender(){
     mover = "<button onclick='moverParaAprendidos()' class='btn btn-warning'> Mover para aprendidos</button>";
     remover = "<button onclick='removerDaPagina()' class='btn btn-danger'> Remover</button>";
     $("#listaDeTemasAAprender").append("<li class='list-group-item'>"+item+mover+remover+"</li>");
+    limpaCampoInput();
     return false;
 }
 
@@ -23,4 +24,8 @@ function removerDaPagina(){
     $( document ).on( "click", function( event ) {
         $( event.target ).closest( "li" ).remove();
     });
+}
+
+function limpaCampoInput(){
+    $("#input_assunto").val("");
 }

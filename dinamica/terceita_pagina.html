@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Obrigado</title>
+
+    <!--bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script_da_terceira_pagina.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Assuntos que gostaria de aprender</h3>
+        </div>
+        <div class="panel-body">
+
+            <form class="form-inline" role="form" onsubmit="adicionarAListaParaAprender();return false;">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Assunto para aprender</div>
+                        <input type="text" class="form-control" id="input_assunto">
+                    </div>
+                </div>
+                <button class="btn btn-success"> Adicionar</button>
+            </form>
+
+            <br>
+
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h4>Temas a aprender: </h4>
+                </div>
+                <div class="panel-body">
+                    <ul id="listaDeTemasAAprender"></ul>
+                </div>
+            </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4>Temas já aprendidos: </h4>
+                </div>
+                <div class="panel-body">
+                    <ul id="listaDeTemasJaAprendido"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

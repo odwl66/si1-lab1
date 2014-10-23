@@ -2,27 +2,27 @@
  * Created by Órion on 21/10/2014.
  */
 
-
 function adicionarAListaParaAprender(){
     item = $("#input_assunto").val();
-    mover = "<button onclick='moverParaAprendidos()' class='btn btn-warning'> Mover para aprendidos</button>";
-    remover = "<button onclick='removerDaPagina()' class='btn btn-danger'> Remover</button>";
+    mover = "<button onclick='moverParaAprendidos()' class='btn btn-warning mover'> Mover para aprendidos</button>";
+    remover = "<button onclick='removerDaPagina()' class='btn btn-danger remover'> Remover</button>";
     $("#listaDeTemasAAprender").append("<li class='list-group-item'>"+item+mover+remover+"</li>");
     limpaCampoInput();
     return false;
 }
 
 function moverParaAprendidos(){
-    $( document ).on( "click", function( event ) {
-        tema = $( event.target ).closest( "li")[0].childNodes[0].data;
-        removerDaPagina();
+    $(".mover").click(function(){
+        $parent = $(this).parent("li");
+        tema = $parent[0].childNodes[0].data;
         $("#listaDeTemasJaAprendido").append("<li class='list-group-item'>" +tema+ "</li>");
+        $parent.remove();
     });
 }
 
 function removerDaPagina(){
-    $( document ).on( "click", function( event ) {
-        $( event.target ).closest( "li" ).remove();
+    $(".remover").click(function(){
+        $(this).parent("li").remove();
     });
 }
 

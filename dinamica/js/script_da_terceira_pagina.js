@@ -4,6 +4,9 @@
 
 function adicionarAListaParaAprender(){
     item = $("#input_assunto").val();
+    if (item == ""){
+        return;
+    }
     mover = "<button onclick='moverParaAprendidos(this)' class='btn btn-warning mover'> Mover para aprendidos</button>";
     remover = "<button onclick='removerDaPagina(this)' class='btn btn-danger remover'> Remover</button>";
     $("#listaDeTemasAAprender").append("<li class='list-group-item'>"+item+mover+remover+"</li>");

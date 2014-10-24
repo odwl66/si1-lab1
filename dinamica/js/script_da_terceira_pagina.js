@@ -2,29 +2,33 @@
  * Created by Órion on 21/10/2014.
  */
 
-function adicionarAListaParaAprender(){
-    item = $("#input_assunto").val();
-    if (item == ""){
-        return;
+$( document ).ready(function() {
+    $( "form" ).submit(function() {
+        item = $("#input_assunto").val();
+        if (item == "") {
+            return;
+        }
+        item = "<p>"+item+"</p>";
+        mover = "<button class='btn btn-warning mover'> Mover para aprendidos</button>";
+        remover = "<button class='btn btn-danger remover'> Remover</button>";
+        $("#listaDeTemasAAprender").append("<li class='list-group-item'>" + item + mover + remover + "</li>");
+        limpaCampoInput();
+        return false;
+    });
+
+    function limpaCampoInput(){
+        $("#input_assunto").val("");
     }
-    mover = "<button onclick='moverParaAprendidos(this)' class='btn btn-warning mover'> Mover para aprendidos</button>";
-    remover = "<button onclick='removerDaPagina(this)' class='btn btn-danger remover'> Remover</button>";
-    $("#listaDeTemasAAprender").append("<li class='list-group-item'>"+item+mover+remover+"</li>");
-    limpaCampoInput();
-    return false;
-}
 
-function moverParaAprendidos(botao){
-    parent = botao.parentElement;
-    tema = parent.firstChild.textContent;
-    $("#listaDeTemasJaAprendido").append("<li class='list-group-item'>" +tema+ "</li>");
-    parent.remove();
-}
+    $("#listaDeTemasAAprender").on("click", ".mover", function() {
+        var parent = $(this).parent();
+        var tema = parent.find("p").text();
+        $("#listaDeTemasJaAprendido").append("<li class='list-group-item'>" + tema + "</li>");
+        parent.remove();
+    });
 
-function removerDaPagina(botao){
-    botao.parentElement.remove();
-}
+    $("#listaDeTemasAAprender").on("click", ".remover", function(){
+        $(this).parent().remove();
+    });
+});
 
-function limpaCampoInput(){
-    $("#input_assunto").val("");
-}
